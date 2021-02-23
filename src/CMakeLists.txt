@@ -31,7 +31,11 @@ foreach(MOC_FILE ${MOC_FILES})
     set(SRC ${SRC} ${CMAKE_BINARY_DIR}/generated/${MOC_NAME}.moc.cc)
 endforeach()
 
-add_executable(main ${SRC})
+if(ANDROID)
+    add_library(main SHARED ${SRC})
+else()
+    add_executable(main ${SRC})
+endif()
 
 target_compile_options(main PRIVATE -fPIC)
 
