@@ -6,7 +6,11 @@ cmake
 
 [options]
 qt:shared=True
+qt:opengl=dynamic
+qt:qtx11extras=True
 qt:qtwinextras=True
+qt:qtmacextras=True
+qt:qtandroidextras=True
 
 [imports]
 bin, *.dll -> ./bin
