@@ -7,7 +7,7 @@ include_directories(${CMAKE_BINARY_DIR}/generated)
 file(GLOB QT_RESOURCES ${CMAKE_CURRENT_LIST_DIR}/*.qrc)
 foreach(QT_RESOURCE ${QT_RESOURCES})
     get_filename_component(QT_RESOURCE_NAME ${QT_RESOURCE} NAME_WE)
-    execute_process(COMMAND ${QT_RCC_EXECUTABLE} ${QT_RESOURCES} -o ${CMAKE_BINARY_DIR}/generated/${QT_RESOURCE_NAME}.cc)
+    execute_process(COMMAND ${QT_RCC_EXECUTABLE} ${QT_RESOURCE} -o ${CMAKE_BINARY_DIR}/generated/${QT_RESOURCE_NAME}.cc)
     set(SRC ${SRC} ${CMAKE_BINARY_DIR}/generated/${QT_RESOURCE_NAME}.cc)
 endforeach()
 
