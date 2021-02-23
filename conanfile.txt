@@ -1,0 +1,17 @@
+[requires]
+qt/5.15.2
+
+[generators]
+cmake
+
+[options]
+qt:shared=True
+qt:qtwinextras=True
+
+[imports]
+bin, *.dll -> ./bin
+lib, *.dylib* -> ./bin
+lib, *.so* -> ./bin
+bin/archdatadir/plugins/platforms, *.dll -> ./bin/platforms
+bin/archdatadir/plugins/platforms, *.dylib* -> ./bin/platforms
+bin/archdatadir/plugins/platforms, *.so* -> ./bin/platforms
