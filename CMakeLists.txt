@@ -1,10 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
 project(asiocom CXX)
 
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj")
-
 if(WIN32)
   set(CMAKE_WIN32_EXECUTABLE ON)
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj")
 endif()
 
 if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
