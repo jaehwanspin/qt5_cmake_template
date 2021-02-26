@@ -1,1 +1,1 @@
-# qt5_cmake_template
+# 그냥 갖다 쓰세요
