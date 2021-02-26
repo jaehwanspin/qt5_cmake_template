@@ -6,7 +6,6 @@ cmake
 
 [options]
 qt:shared=True
-qt:qttools=True
 qt:qtshadertools=True
 qt:with_vulkan=True
 
