@@ -6,7 +6,7 @@ cmake
 
 [options]
 qt:shared=True
-qt:winextras=True
+qt:qtwinextras=True
 qt:qtx11extras=True
 qt:qtandroidextras=True
 qt:qtmacextras=True
