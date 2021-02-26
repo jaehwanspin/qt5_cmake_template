@@ -1,12 +1,15 @@
 [requires]
-qt/6.0.1
+qt/5.15.2
 
 [generators]
 cmake
 
 [options]
 qt:shared=True
-qt:qtshadertools=True
+qt:winextras=True
+qt:qtx11extras=True
+qt:qtandroidextras=True
+qt:qtmacextras=True
 qt:with_vulkan=True
 
 [imports]
