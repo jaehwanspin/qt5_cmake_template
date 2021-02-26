@@ -9,8 +9,16 @@ if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
                  TLS_VERIFY ON)
 endif()
 
+set(CMAKE_CONAN_TARGET_PROFILE default)
+if(ANDROID)
+   set(CMAKE_CONAN_TARGET_PROFILE ${CMAKE_SOURCE_DIR}/cmake/android/android_arm64)
+elseif(APPLE)
+
+endif()
+
 include(${CMAKE_BINARY_DIR}/conan.cmake)
 conan_cmake_run(CONANFILE conanfile.txt
+                PROFILE ${CMAKE_CONAN_TARGET_PROFILE}
                 BASIC_SETUP 
                 BUILD missing)
 
@@ -21,14 +29,14 @@ set(QT_RCC_EXECUTABLE ${CONAN_QT_ROOT}/bin/rcc)
 if(WIN32)
   set(CMAKE_WIN32_EXECUTABLE ON)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj")
-  include(${CMAKE_SOURCE_DIR}/cmake/windows.cmake)
+  include(${CMAKE_SOURCE_DIR}/cmake/windows/windows.cmake)
 elseif(UNIX)
   if(APPLE)
-    include(${CMAKE_SOURCE_DIR}/cmake/ios.cmake)
+    include(${CMAKE_SOURCE_DIR}/cmake/ios/ios.cmake)
   elseif(ANDROID)
-    include(${CMAKE_SOURCE_DIR}/cmake/android.cmake)
+    include(${CMAKE_SOURCE_DIR}/cmake/android/android.cmake)
   else()
-    include(${CMAKE_SOURCE_DIR}/cmake/linux.cmake)
+    include(${CMAKE_SOURCE_DIR}/cmake/linux/linux.cmake)
   endif()
 endif()
 
