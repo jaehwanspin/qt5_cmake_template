@@ -13,7 +13,7 @@ set(CMAKE_CONAN_TARGET_PROFILE default)
 if(ANDROID)
    set(CMAKE_CONAN_TARGET_PROFILE ${CMAKE_SOURCE_DIR}/cmake/android/android_arm64)
 elseif(APPLE)
-
+   set(CMAKE_CONAN_TARGET_PROFILE ${CMAKE_SOURCE_DIR}/cmake/ios/ios_arm64)
 endif()
 
 include(${CMAKE_BINARY_DIR}/conan.cmake)
