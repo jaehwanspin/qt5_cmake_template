@@ -1,15 +1,14 @@
 [requires]
-qt/5.15.2
+qt/6.0.1
 
 [generators]
 cmake
 
 [options]
 qt:shared=True
-qt:qtx11extras=True
-qt:qtwinextras=True
-qt:qtmacextras=True
-qt:qtandroidextras=True
+qt:qttools=True
+qt:qtshadertools=True
+qt:with_vulkan=True
 
 [imports]
 bin, *.dll -> ./bin
